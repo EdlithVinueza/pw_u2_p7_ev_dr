@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Formulario con Vue</h1>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <br>
+            <input v-model="nombre" id="nombre" type="text">
+            <hr>
+            <label for="apellido">Apellido:</label>
+            <br>
+            <input v-model="apellido" id="apellido" type="text">
+            <hr>
+            <label for="hobby">Hobby:</label>
+            <br>
+            <input v-model="hobby" id="hobby" type="text">
+            <hr>
+            <label for="lugar">Lugar de Nacimiento:</label>
+            <br>
+            <input v-model="lugar" id="lugar" type="text">
+            <hr>
+            <button type="button" v-on:click="guardar">Guardar</button>
+        </form>
+        <ul>
+            <li v-for="(item, index) in lista" :key="index">
+                {{ item.nombre }} - {{ item.apellido }} - {{ item.hobby }} - {{ item.lugar }}
+            </li>
+        </ul>
+        <p v-if="lista.length === 0">No hay elementos en la lista</p>
+    </div>
+</body>
+
+<script src="./js/app.js"></script>
+
+</html>
